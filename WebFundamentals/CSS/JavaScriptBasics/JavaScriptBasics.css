@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: blue;
+    display: inline-block;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+h1 {
+    background-color: red;
+    border-radius: 10px;
+    padding: 20px;
+    margin-left: 10px;
+    color: white;
+}
+
+a {
+    color: aqua;
+}
+
+#nav {
+    background-color: #4286f4;
+    border-radius: 10px;
+    display: inline-block;
+    height: 200px;
+    width: 180px;
+    margin-left: 10px;
+    margin-top: 20px;
+    padding: 20px;
+    padding-right: 10px;
+}
+
+#main {
+    background-color: black;
+    border-radius: 10px;
+    display: inline-block;
+    height: 500px;
+    width: 970px;
+    margin-left: 20px;
+    margin-top: 20px;
+    padding: 10px;
+    padding-bottom: 0px;
+    vertical-align: top;
+}
+
+#mainList {
+    padding: 20px;
+    padding-top: 0px;
+}
+
+#mainList li {
+    color: aqua;
+    padding: 5px;
+}
+
+ul li {
+    color: aqua;
+    margin-left: 20px;
+}
+
+#navTopLink {
+    color: aqua;
+    list-style-type: none;
+    margin-left: 0px;
+    display: block;
+}
+
+h2 {
+    padding: 10px;
+    padding-bottom: 0px;
+    color: white;
+}
+
+p {
+    color: white;
+    padding: 10px;
+    display: inline;
+}
+
+#overview {
+    color: white;
+    display: block;
+}
+span {
+    color: #8191FF;
+}
+
+#footer {
+    background-color: #5E6672;
+    display: block;
+    margin-top: 10px;
+    border-radius: 10px;
+    padding: 12px;
+}
