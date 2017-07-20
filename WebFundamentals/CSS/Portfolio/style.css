@@ -1,0 +1,183 @@
+/*Boiler Plate*/
+*{
+	padding: 0;
+	margin: 0;
+    /*border: 1px dotted red;*/
+}
+body{
+
+    width: 970px;
+
+}
+article{
+
+}
+h3{
+    color: white;
+    padding: 10px;
+
+}
+a{
+    color: black;
+    text-decoration-color: black;
+    margin: 10px;
+}
+p{
+    margin: 10px;
+}
+
+footer{
+    height: 70px;
+    text-align: center;
+}
+
+#Wrapper{
+    background-color: #e2e2e2;
+}
+
+/*Main Elements*/
+#Name{
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    display: inline-block;
+    width: 400px;
+    padding: 10px;
+}
+#Title{
+    font-family: Arial, Helvetica, sans-serif;
+    display: inline-block;
+    width: 515px;
+    padding: 10px;
+    padding-top: 23px;
+    padding-bottom: 13px;
+    text-align: right;
+}
+#Content{
+    /*height: 550px;*/
+    padding-left: 20px;
+}
+#Content_Head{
+    margin: 10px;
+    /*background-color: red;*/
+}
+#Content_Body{
+    margin: 10px;
+    /*background-color: blue;*/
+    padding-bottom: 20px;
+}
+#Pic{
+    height: 270px;
+    width: 400px;
+    margin: 20px;
+    padding: 5px;
+    background-color: #A7A6AD;
+    display: inline-block;
+}
+#About{
+    height: 280px;
+    width: 400px;
+    margin-left: 20px;
+    margin-top: 20px;
+    vertical-align: top;
+    display: inline-block;
+}
+
+#La_Mode{
+    /*height: 280px;*/
+    height: 600px;
+    width: 268px;
+    margin-left: 20px;
+    margin-top: 20px;
+    vertical-align: top;
+    display: inline-block;
+}
+#Family_Contact{
+    height: 600px;
+    width: 268px;
+    margin-left: 20px;
+    margin-top: 20px;
+    vertical-align: top;
+    display: inline-block;
+}
+#fiveEleven{
+    height: 600px;
+    width: 268px;
+    margin-left: 20px;
+    margin-top: 20px;
+    vertical-align: top;
+    display: inline-block;
+}
+#Tech1{
+
+    margin-top: 72px;
+    /*display: inline;*/
+    /*display: inline-block;*/
+}
+#Tech2{
+
+    margin-top: 55px;
+    /*display: inline-block;*/
+}
+#Tech3{
+
+    margin-top: 20px;
+    /*display: inline-block;*/
+}
+#Contact_Links{
+    margin: 0px;
+    padding: 0px;
+    display: inline-block;
+    align-content: center;
+}
+#Contact_Links a{
+    margin: 0px;
+    vertical-align: middle;
+    /*vertical-align: top;*/
+}
+#Contact_Links img{
+    margin: 0px;
+    padding: 0px;
+    vertical-align: middle;
+}
+
+/*Classes*/
+.rad_grad{
+  background: #6F5964; /* For browsers that do not support gradients */
+  background: -webkit-radial-gradient(#6F5964, #1E0E12); /* Safari 5.1 to 6.0 */
+  background: -o-radial-gradient(#6F5964, #1E0E12); /* For Opera 11.6 to 12.0 */
+  background: -moz-radial-gradient(#6F5964, #1E0E12); /* For Firefox 3.6 to 15 */
+  background: radial-gradient(#6F5964, #1E0E12); /* Standard syntax */
+}
+
+.bi_grad{
+  background: #878693; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(#A7A6AD, #878693, #A7A6AD); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#A7A6AD, #878693, #A7A6AD); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#A7A6AD, #878693, #A7A6AD); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#A7A6AD, #878693, #A7A6AD); /* Standard syntax */
+}
+.right_grad{
+  background: white; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(-90deg, #DCCEDB, #FFFEFF); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(-90deg, #DCCEDB, #FFFEFF); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(-90deg, #DCCEDB, #FFFEFF); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(-90deg, #DCCEDB, #FFFEFF); /* Standard syntax */
+}
+.badge{
+    margin: 2px;
+    padding: 2px;
+}
+.button{
+    height: 30px;
+    width: 100px;
+    margin-left: 90px;
+    margin-top: 10px;
+    border-color: black;
+    background-color: green;
+    border-width: thin;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 2px 2px 2px 2px #B3B3B3;
+    box-shadow: 2px 2px 2px 2px #B3B3B3;
+    font-weight: bold;
+    color: white;
+}
