@@ -52,6 +52,11 @@ aside ul{
     list-style-type: square;
     margin-left: 50px;
 }
+aside ul li a{
+    text-decoration: none;
+    color: #7CAED8
+
+}
 #Overview{
     display: inline-block;
     width: 500px;
@@ -74,6 +79,7 @@ footer{
     background: -o-linear-gradient(#2A5981, #3674A9); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(#2A5981, #3674A9); /* For Firefox 3.6 to 15 */
     background: linear-gradient(#2A5981, #3674A9); /* Standard syntax */
+    margin-top: 20px;
 }
 footer div{
 
