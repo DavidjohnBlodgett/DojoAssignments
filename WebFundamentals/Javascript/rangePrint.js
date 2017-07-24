@@ -1,7 +1,7 @@
-function rangePrint(start,end,skip){
-    if(skip === undefined){
-        skip = 1;
-    }
+function rangePrint(start,end,skip = 1){
+    // if(skip === undefined){
+    //     skip = 1;
+    // }
     if(end === undefined){
         end = start;
         start = 0;
