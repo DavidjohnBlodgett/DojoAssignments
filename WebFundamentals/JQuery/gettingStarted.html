@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <!-- TODO: add style.css -->
+        <link rel="stylesheet" type="text/css" href="">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+            // $ is used to access jQuery syntax sugar...
+            //console.log($());
+
+            // access the DOM... this waits for page to load...
+            $(document).ready(function(){
+                alert("you are now working with jQuery!")
+                // access an element...
+                $('body').click(function(){
+                    // more code will go here
+                    alert("You Clicked!!!");
+                });
+            });
+
+
+        </script>
+    </head>
+
+    <body>
+        <h1>Hello World!</h1>
+    </body>
+</html>

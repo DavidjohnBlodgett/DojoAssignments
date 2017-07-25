@@ -1,0 +1,24 @@
+* {
+	padding: 0;
+	margin: 0;
+	/*border: 1px dotted red;*/
+}
+section{
+    margin: 20px;
+    padding: 20px;
+    -webkit-box-shadow: 0 5px 0 0 #000000;
+    box-shadow: 0 5px 0 0 #000000;
+}
+section button{
+    display: inline-block;
+}
+section article{
+    display: inline-block;
+}
+/*section article p{
+    background-color: red;
+}*/
+
+.red{
+    background-color: red;
+}

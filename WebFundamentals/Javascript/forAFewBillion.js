@@ -1,6 +1,7 @@
 // sum of 30days of work...
 var sum = 0.01;
 
+// TODO: this does not reflect total... just last day!
 for(var i = 1; i <= 30; i++){
     sum = sum * 2;
 }

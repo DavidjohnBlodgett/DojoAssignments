@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <!-- TODO: add style.css -->
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                // hide the img for toggleslide event...
+                $('#Slidetoggle article img').hide();
+
+                // attach event listeners to each section...
+                $('#AddClass button').click(function(){
+                    $('#AddClass article p').addClass('red');
+                });
+                $('#Slidetoggle button').click(function(){
+                    $('#Slidetoggle article img').slideToggle();
+                });
+                $('#Append button').click(function(){
+                    $('#Append article').append('<p>Im the appended paragraph!</p>');
+                });
+                $('#Attr button').click(function(){
+                    $('#Attr article p').append('<p> The value of my attribute is ' + $('#Attr article p').attr('someAttr') + '</p>');
+                });
+                $('#Fadeout button').click(function(){
+                    $('#Fadeout article p').fadeOut();
+                });
+
+            });
+        </script>
+    </head>
+
+    <body>
+        <section id="AddClass">
+            <button>AddClass</button>
+            <article>
+                <h1>AddClass</h1>
+                <p>Click the button to add a class 'red' to this paragraph</p>
+            </article>
+        </section>
+        <section id="Slidetoggle">
+            <button>Slidetoggle</button>
+            <article>
+                <h1>Slidetoggle</h1>
+                <p>Click the button to slidetoggle a hidden image</p>
+                <img src="./jQuery.png" alt="./jQuery.png">
+            </article>
+        </section>
+        <section id="Append">
+            <button>Append</button>
+            <article>
+                <h1>Append</h1>
+                <p>Click the button to append a new paragraph</p>
+            </article>
+        </section>
+        <section id="Attr">
+            <button>Attr</button>
+            <article>
+                <h1>Attr</h1>
+                <p someAttr="foo">Click the button to expose my attribute.</p>
+            </article>
+        </section>
+        <section id="Fadeout">
+            <button>Fadeout</button>
+            <article>
+                <h1>Fadeout</h1>
+                <p>Click the button to fadeout this paragraph</p>
+            </article>
+        </section>
+        <!-- <section id="">
+            <button></button>
+            <article>
+                <h1></h1>
+                <p>Click the button to</p>
+            </article>
+        </section> -->
+    </body>
+</html>
