@@ -8,8 +8,6 @@ function numbersOnly(arr) {
     return newarr;
 }
 
-
-// TODO:
 function numbersOnly2(arr) {
     for (var i = 0; i < arr.length; i++) {
         if(typeof arr[i] !== "number"){
@@ -24,7 +22,6 @@ function numbersOnly2(arr) {
     }
     return arr;
 }
-
 
 // test...
 var newArray = numbersOnly([1, "apple", -3, "orange", 0.5]);
