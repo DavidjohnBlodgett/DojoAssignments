@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <!-- TODO: add style.css -->
+        <link rel="stylesheet" type="text/css" href="">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('img').css('margin', '10px');
+                $('img').css('display', 'block');
+                // add event listeners here...
+                $('img').click(function(){
+                    var temp = $(this).attr('src');
+                    $(this).attr( 'src', $(this).attr('alt-img'));
+                    $(this).attr( 'alt-img', temp);
+                });
+            });
+
+
+        </script>
+    </head>
+
+    <body>
+        <img src="./img/cat0.png" alt="cat0.png" alt-img="./img/ninja0.png">
+        <img src="./img/ninja1.png" alt="ninja1.png" alt-img="./img/cat1.png">
+        <img src="./img/cat2.png" alt="cat2.png" alt-img="./img/ninja2.png">
+        <img src="./img/ninja3.png" alt="ninja3.png" alt-img="./img/cat3.png">
+        <img src="./img/cat4.png" alt="cat4.png" alt-img="./img/ninja4.png">
+    </body>
+</html>
