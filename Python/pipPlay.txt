@@ -1,0 +1,12 @@
+  510  pip install Django
+  511  pip list
+  512  pip install Django
+  513  pip freeze
+  514  ls
+  515  pip freeze > requirements.txt
+  516  ls
+  517  vim requirements.txt 
+  518  pip uninstall Django
+  519  pip show Django
+  520  pip search Flask
+  523  history | tail -20 > pipPlay.txt
