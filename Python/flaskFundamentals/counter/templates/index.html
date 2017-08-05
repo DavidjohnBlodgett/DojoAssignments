@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Counter</title>
+    </head>
+    <body>
+        <p>Count: {{session['count']}}</p>
+        <form action="/addOne" method="post">
+            <button type="submit" name="addOne">Add One</button>
+        </form>
+        <form action="/addTwo" method="post">
+            <button type="submit" name="addOne">Add Two</button>
+        </form>
+        <form action="/reset" method="post">
+            <button type="submit" name="reset">Reset</button>
+        </form>
+    </body>
+</html>

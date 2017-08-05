@@ -4,11 +4,13 @@
         <meta charset="utf-8">
         <title>"stuff"</title>
         <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
-        <script type="text/javascript" src="{{url_for('static',filename='js/myScript.js')}}"></script>
+        <!-- <script type="text/javascript" src="{{url_for('static',filename='js/myScript.js')}}"></script> -->
 
         </script>
     </head>
     <body>
-        <p>hello {{username}}</p>
-    </body>
+        <h1>User:</h1>
+        <h3>{{session['name']}}</h3>
+        <h3>{{session['email']}}</h3>
+  </body>
 </html>
