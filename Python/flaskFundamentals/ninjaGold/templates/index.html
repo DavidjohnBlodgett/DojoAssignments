@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ninja Gold</title>
+        <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            var addItem = function(item){
+                console.log("I'm in the addItem func");
+                $('.output').append('<li>item</li>');
+            }
+            var Log = {{session.log}};
+            $(document).ready(function(){
+                for(var i = 0;i < Log.length;i++){
+                    console.log('Im trying to add',i);
+                    addItem(Log[i]);
+                }
+            });
+        </script> -->
+    </head>
+    <body>
+        <main>
+            <section id='Score'>
+                <p>Your Score:</p>
+                <output name="Gold">{{session.gold}}</output>
+            </section>
+            <section id='Options'>
+                <form action="/process_money" method="post">
+                        <h4>Farm</h4>
+                        <p>(earns 10-20 golds)</p>
+                        <input type="hidden" name="action" value="farm">
+                        <button type="submit" name="button">Find Gold!</button>
+                </form>
+                <form action="/process_money" method="post">
+                        <h4>Cave</h4>
+                        <p>(earns 5-10 golds)</p>
+                        <input type="hidden" name="action" value="cave">
+                        <button type="submit" name="button">Find Gold!</button>
+                </form>
+                <form action="/process_money" method="post">
+                        <h4>House</h4>
+                        <p>(earns 2-5 golds)</p>
+                        <input type="hidden" name="action" value="house">
+                        <button type="submit" name="button">Find Gold!</button>
+                </form>
+                <form action="/process_money" method="post">
+                        <h4>Casino</h4>
+                        <p>(earns/takes 0-50 golds)</p>
+                        <input type="hidden" name="action" value="casino">
+                        <button type="submit" name="button">Find Gold!</button>
+                </form>
+            </section>
+            <section id='Log'>
+                <p>Activities:</p>
+                <output name="Log" >
+                    <ul class="ouput">
+                        <!-- tried dynamic population with jquery... doesn't seem to work -->
+                        <li>{{session.log}}</li>
+                    </ul>
+                </output>
+            </section>
+        </main>
+    </body>
+</html>

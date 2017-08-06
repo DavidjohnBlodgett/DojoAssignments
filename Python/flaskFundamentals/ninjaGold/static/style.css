@@ -1,0 +1,26 @@
+*{
+	padding: 0;
+	margin: 0;
+    color: black;
+    /*border: 1px dotted red;*/
+}
+
+#Score p{
+    display: inline-block;
+}
+#Score output{
+    height: 30px;
+    width: 120px;
+    border: 1px solid #ccc;
+    display: inline-block;
+}
+
+#Log output{
+    overflow:auto;
+    /*height:120px;
+    width:120px;*/
+    height:100px;
+    width:auto;
+    border:1px solid #ccc;
+    display:block;
+}
