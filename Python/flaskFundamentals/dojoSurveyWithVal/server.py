@@ -30,6 +30,9 @@ def process():
     if len(request.form['comment']) < 1:
         flash("Comment cannot be blank!")
         return redirect('/')
+    elif len(request.form['comment']) > 120:
+        flash("Comment cannot be more than 120 characters!")
+        return redirect('/')
     else:
         comment = request.form['comment']
     return render_template('result.html',name=name,location=location,lang=lang,comment=comment)
