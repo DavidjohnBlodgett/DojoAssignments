@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Dojo Survey</title>
+    </head>
+    <body>
+        <main>
+            <h3>Submitted Info</h3>
+            <table>
+                <tr>
+                    <td>Name:</td><td>{{request.session.name}}</td>
+                </tr>
+                <tr>
+                    <td>Dojo Location:</td><td>{{request.session.location}}</td>
+                </tr>
+                <tr>
+                    <td>Favorite Languge:</td><td>{{request.session.lang}}</td>
+                </tr>
+                <tr>
+                    <td>Comment</td><td>{{request.session.comment}}</td>
+                </tr>
+            </table>
+            <form action="/" method="get">
+                    {% csrf_token %}
+                    <button name="return" type="submit">Go Back</button>
+            </form>
+        </main>
+    </body>
+</html>
