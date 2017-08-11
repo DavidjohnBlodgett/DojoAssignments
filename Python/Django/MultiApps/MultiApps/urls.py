@@ -21,4 +21,5 @@ urlpatterns = [
     url(r'^blogs', include('apps.blogs_app.urls')),
     url(r'^surveys', include('apps.surveys_app.urls')),
     url(r'^users', include('apps.users_app.urls')),
+    url(r'^time', include('apps.time_app.urls')),
 ]
