@@ -14,7 +14,7 @@ def random_word(request, methods=['POST']):
     # del
     print "WTF"
     print request.session['randomWord']
-    request.session['randomWord'] = get_random_string()
+    request.session['randomWord'] = get_random_string(length=14, allowed_chars='ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890')
     request.session['count'] = request.session['count']+1
     # need below when your key is a pointer to a list and the list changes...
     # request.session.modify = True
