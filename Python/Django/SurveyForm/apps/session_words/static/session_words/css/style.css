@@ -1,0 +1,18 @@
+.word{
+    list-style: none;
+}
+.red{
+    color: red;
+}
+.green{
+    color: green;
+}
+.blue{
+    color: blue;
+}
+.big{
+    font-size: 200%;
+}
+ul li p{
+    display: inline-block;
+}
