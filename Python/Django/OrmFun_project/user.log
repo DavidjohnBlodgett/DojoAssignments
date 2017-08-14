@@ -1,0 +1,12 @@
+1. User.objects.all()
+2. User.objects.last()
+3. User.objects.create(first_name="foo", last_name="bar", email="wtf@foo.com", age=55)
+4. User.objects.first()
+5. User.objects.order_by("-first_name")
+6. User.objects.create(first_name="me", last_name="wow", email="boo@foo.com", age=88)
+   temp = User.objects.get(id=3)
+   temp.last_name = "vox"
+   temp.save()
+
+7. User.objects.get(id=4).delete()
+8. ... (build in validation within the model, like a function to be called on each creation request)
