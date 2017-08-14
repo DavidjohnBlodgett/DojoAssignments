@@ -1,0 +1,24 @@
+1.  Dojos.objects.create(name="CodingDojo Silicon Valley",city="Mountain View",state="CA")
+    Dojos.objects.create(name="CodingDojo Seattle",city="Seattle",state="WA")
+    Dojos.objects.create(name="CodingDojo New York",city="New York",state="NY")
+
+2.  Dojos.objects.all().delete()
+
+3.  Dojos.objects.create(name="CodingDojo Silicon Valley",city="Mountain View",state="CA")
+    Dojos.objects.create(name="CodingDojo Seattle",city="Seattle",state="WA")
+    Dojos.objects.create(name="CodingDojo New York",city="New York",state="NY")
+
+4.  Ninjas.objects.create(first_name="ken",last_name="masters",dojo_id_id=1)
+    Ninjas.objects.create(first_name="ryu",last_name="something",dojo_id_id=1)
+    Ninjas.objects.create(first_name="dan",last_name="something",dojo_id_id=1)
+
+5.  Ninjas.objects.create(first_name="man",last_name="foo",dojo_id_id=2)
+    Ninjas.objects.create(first_name="mln",last_name="boo",dojo_id_id=2)
+    Ninjas.objects.create(first_name="mld",last_name="boh",dojo_id_id=2)
+
+6.  Ninjas.objects.filter(dojo_id_id=1)
+
+7.  Ninjas.objects.filter(dojo_id_id=3)
+
+8.  python manage.py makemigrations
+    python manage.py migrate
