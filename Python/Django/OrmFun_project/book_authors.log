@@ -1,0 +1,57 @@
+Book.objects.create(name="C sharp")
+Book.objects.create(name="Java")
+Book.objects.create(name="Python")
+Book.objects.create(name="PHP")
+Book.objects.create(name="Ruby")
+
+Author.objects.create(first_name="Mike")
+Author.objects.create(first_name="Speros")
+Author.objects.create(first_name="John")
+Author.objects.create(first_name="Jadee")
+Author.objects.create(first_name="Jay")
+quit()
+
+python manage.py makemigrations
+python manage.py migrate
+
+from apps.book_authors_app.models import Book,Author
+temp = Book.objects.get(id=5)
+temp.name = "C#"
+temp.save()
+
+temp = Author.objects.get(id=5)
+temp.first_name = "Ketul"
+temp.save()
+
+a = Author.objects.first()
+Book.objects.get(id=1).authors.add(a)
+Book.objects.get(id=2).authors.add(a)
+
+b = Author.objects.get(id=2)
+Book.objects.get(id=1).authors.add(b)
+Book.objects.get(id=2).authors.add(b)
+Book.objects.get(id=3).authors.add(b)
+
+c = Author.objects.get(id=3)
+Book.objects.get(id=1).authors.add(c)
+Book.objects.get(id=2).authors.add(c)
+Book.objects.get(id=3).authors.add(c)
+Book.objects.get(id=4).authors.add(c)
+
+d = Author.objects.get(id=4)
+Book.objects.all().authors.add(b)
+Book.objects.get(id=1).authors.add(d)
+Book.objects.get(id=2).authors.add(d)
+Book.objects.get(id=3).authors.add(d)
+Book.objects.get(id=4).authors.add(d)
+Book.objects.get(id=5).authors.add(d)
+
+Book.objects.get(id=3).authors
+
+Book.objects.get(id=3).authors.first().delete() // this deleted... should have been .remove...
+
+Book.objects.get(id=2).authors.add(Author.objects.get(id=5))
+
+Author.objects.get(id=3).books
+
+Author.objects.get(id=2).books
