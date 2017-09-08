@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Dojo Survey</title>
+    </head>
+    <body>
+        <main>
+            <h3>Submitted Info</h3>
+            <table>
+                <tr>
+                    <td>Name:</td><td><%= name%></td>
+                </tr>
+                <tr>
+                    <td>Dojo Location:</td><td><%= location%></td>
+                </tr>
+                <tr>
+                    <td>Favorite Languge:</td><td><%= lang%></td>
+                </tr>
+                <tr>
+                    <td>Comment</td><td><%= comment%></td>
+                </tr>
+            </table>
+            <form action="/" method="get">
+                    <button name="return" type="submit">Go Back</button>
+            </form>
+        </main>
+    </body>
+</html>
