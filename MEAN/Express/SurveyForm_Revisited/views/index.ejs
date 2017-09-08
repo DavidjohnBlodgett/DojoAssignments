@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Dojo Survey</title>
+        <!-- loading a jquery file thats being served from my server npm install... -->
+        <script src="/jquery/dist/jquery.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                var socket = io.connect();
+                $('button').on('click', function() {
+                    socket.emit('button_clicked', {
+                        'name': $('#name').val(),
+                        'location': $('#location').val(),
+                        'lang': $('#lang').val(),
+                        'comment': $('#comment').val(),
+                    })
+                })
+                socket.on('display_req', function(data) {
+                    $('#display').append(
+                        `You emitted the following informationto the server: {
+                            name: '${data.name}',
+                            location: '${data.location}',
+                            language: '${data.lang}',
+                            comment: '${data.comment}'}
+                            Your lucky number emitted by the server is ${data.num}.`
+                    );
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <div id="display"></div>
+        <form action="" method="post">
+            <section>
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" value="">
+            </section>
+            <section>
+                <label for="location">Dojo Location:</label>
+                <select id="location">
+                    <option value="Seattle">Seattle</option>
+                    <option value="OverTheRanbow">OverTheRanbow</option>
+                    <option value="AcrossThePond">AcrossThePond</option>
+                </select>
+            </section>
+            <section>
+                <label for="lang">Favorite Languge:</label>
+                <select id="lang">
+                    <option value="Python">Python</option>
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="C#">C#</option>
+                </select>
+            </section>
+            <section class="Comment-Block">
+                <label for="comment">Comment (Optional)</label>
+                <textarea id="comment" rows="8" cols="80"></textarea>
+            </section>
+            <button type="button" name="button">Submit</button>
+        </form>
+    </body>
+</html>
