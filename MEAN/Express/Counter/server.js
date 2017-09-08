@@ -22,19 +22,19 @@ app.set('view engine', 'ejs');
 app.get('/', function(req, res) {
     var context = {}
     if(req.session.count){
-        context['count'] = req.session.count
+        context['count'] = req.session.count + 1;
     }else{
         req.session.count = 0;
-        context['count'] = req.session.count
+        context['count'] = req.session.count + 1;
     }
     res.render("index", context);
 })
 
-app.post('/addOne', function(req, res) {
-    //  console.log("POST DATA", req.body);
-    req.session.count = req.session.count + 1;
-    res.redirect('/');
-})
+// app.post('/addOne', function(req, res) {
+//     //  console.log("POST DATA", req.body);
+//     req.session.count = req.session.count + 1;
+//     res.redirect('/');
+// })
 
 app.post('/addTwo', function(req, res) {
     req.session.count = req.session.count + 2;
@@ -42,7 +42,7 @@ app.post('/addTwo', function(req, res) {
 })
 
 app.post('/reset', function(req, res) {
-    req.session.count = 1;
+    req.session.count = 0;
     res.redirect('/');
 })
 
