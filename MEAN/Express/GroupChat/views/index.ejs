@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Group Chat</title>
+        <!-- loading a jquery file thats being served from my server npm install... -->
+        <script src="/jquery/dist/jquery.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script type="text/javascript">
+
+            // prompt before page loads...
+            var socket = io.connect();
+            var name = prompt('Your Name:')
+
+            $(document).ready(function() {
+                socket.emit('login', name);
+
+                socket.on('load', function(data) {
+                    $('#messages').empty();
+                    for(var i = 0; i < data.length; i++){
+                        $('#messages').append(`<p>${data[i].name}: ${data[i].content}</p>`);
+                    }
+
+                })
+
+                socket.on('update', function(data) {
+                    $('#messages').append(`<p>${data.name}: ${data.content}</p>`);
+                })
+
+                $('#send').on('click', function() {
+                    socket.emit('submit_message', $('#message').val());
+                    $('#message').val('');
+                });
+
+
+
+            })
+        </script>
+    </head>
+    <body>
+        <main>
+            <section>
+                <p>Conversation Board</p>
+                <!-- width: 150px;height: 150px;overflow: scroll; -->
+                <ul id='messages' style='border: 5px solid black;'>
+                    <li>name: message...</li>
+                </ul>
+                <textarea id="message" rows="1" cols="80"></textarea>
+                <button type="button" id="send">Send</button>
+            </section>
+        </main>
+    </body>
+</html>
