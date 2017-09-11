@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Multiplayer Pacman</title>
+        <!-- loading a jquery file thats being served from my server npm install... -->
+        <script src="/jquery/dist/jquery.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script type="text/javascript">
+
+            // prompt before page loads...
+            var socket = io.connect();
+            var name = prompt('Your Name:')
+
+            $(document).ready(function() {
+                socket.emit('login', name);
+
+                socket.on('load', function(data) {
+                    $('#messages').empty();
+                    for(var i = 0; i < data.messages.length; i++){
+                        $('#messages').append(`<p>${data.messages[i].name}: ${data.messages[i].content}</p>`);
+                    }
+                    // draw map!
+                    var status = data.player_status;
+                    for(var i in status.map){
+                        $('#player_1_screen').append(`<tr></tr>`);
+                        for(var x in status.map[i]){
+                            $('#player_1_screen:last-child').append(`<td class="tile"><img src="${status.key[status.map[i][x]]}.png" alt="${status.key[status.map[i][x]]}.png"></td>`);
+                        }
+                    }
+
+                    // set score
+                    $('#player_score').append(`You ${status.score}`);
+
+                })
+
+                // message updates...
+                socket.on('update_messages', function(data) {
+                    $('#messages').append(`<p>${data.name}: ${data.content}</p>`);
+                })
+
+                $('#send').on('click', function() {
+                    socket.emit('submit_message', $('#message').val());
+                    $('#message').val('');
+                });
+
+                // movement updates...
+                $(document).on('keydown', function(event) {
+                    // sort out movement... only overide deault action if its arrow keys...
+                    switch (event.key) {
+                        case 'ArrowDown':
+                            event.preventDefault()
+                            socket.emit('move_down');
+                            break;
+                        case 'ArrowUp':
+                            event.preventDefault()
+                            socket.emit('move_up');
+                            break;
+                        case 'ArrowLeft':
+                            event.preventDefault()
+                            socket.emit('move_left');
+                            break;
+                        case 'ArrowRight':
+                            event.preventDefault()
+                            socket.emit('move_right');
+                            break;
+                        default:
+                            return; // Quit when this doesn't handle the key event.
+                    }
+                })
+
+                socket.on('update', function(data) {
+                    console.log('I want to update!');
+                    // clear windows...
+                    $('#player_1_screen').empty();
+
+                    // update local player window
+                    var status = data.players_status[socket.id];
+                    for(var i in status.map){
+                        $('#player_1_screen').append(`<tr></tr>`);
+                        for(var x in status.map[i]){
+                            $('#player_1_screen:last-child').append(`<td class="tile"><img src="${status.key[status.map[i][x]]}.png" alt="${status.map[status.map[i][x]]}.png"></td>`);
+                        }
+                    }
+                    // update other player windows
+
+
+                })
+
+            })
+        </script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+
+
+        <main>
+            <section id='player_1'>
+                 <table id='player_1_screen'>
+                </table>
+
+            </section>
+            <aside>
+                <h1 id='player_score'></h1>
+                <section id='player_2'>
+                    <table>
+                        <tr>
+                            <td class="miniTile"><img src="wall.png" alt="wall.png" class="mini"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                        </tr>
+                        <tr>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                        </tr>
+                        <tr>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                        </tr>
+                        <tr>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                        </tr>
+                        <tr>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                        </tr>
+                        <tr>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                        </tr>
+                        <tr>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                        </tr>
+                        <tr>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                        </tr>
+                        <tr>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                        </tr>
+                        <tr>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                            <td class="miniTile"></td>
+                        </tr>
+                    </table>
+                </section>
+                <section id='player_3'>
+                    <p>player_3</p>
+                </section>
+            </aside>
+
+            <ul id='messages'>
+                <p>name: message...</p>
+            </ul>
+            <textarea id="message" rows="1" cols="80"></textarea>
+            <button type="button" id="send">Send</button>
+        </main>
+    </body>
+</html>

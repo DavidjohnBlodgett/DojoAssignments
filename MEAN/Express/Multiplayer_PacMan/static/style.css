@@ -1,0 +1,97 @@
+* {
+	padding: 0;
+	margin: 0;
+	/*border: 1px dotted red;*/
+}
+
+main {
+    /*border: 1px solid blue;*/
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+main #player_1 {
+    padding: 0;
+	margin: 0;
+    display: inline-block;
+    vertical-align: top;
+    border: 4px solid black;
+
+}
+
+main #player_1 table {
+    padding: 0;
+	margin: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+main aside {
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+main aside #player_score{
+    display: inline-block;
+    width: 240px;
+    padding: 5px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: 4px solid grey;
+    background-color: blue;
+    color: white;
+
+}
+
+main aside #player_2 {
+    border: 4px solid black;
+    margin-top: 30px;
+}
+
+main aside #player_2 table {
+    padding: 0;
+	margin: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+main aside #player_3 {
+    border: 4px solid black;
+    margin-top: 30px;
+}
+
+main #messages {
+    margin-top: 10px;
+    padding: 10px;
+    border: 4px solid black;
+    height: 50px;
+}
+
+main #message {
+    margin-top: 10px;
+}
+
+main #send {
+    margin-top: 10px;
+}
+
+
+.tile {
+    width: 67px;
+    height: 50px;
+}
+.miniTile {
+    width: 16px;
+    height: 12px;
+}
+img {
+    /*fixes some odd space */
+    display: block;
+}
+
+.mini {
+        width: 100%;
+        height: 100%;
+}
