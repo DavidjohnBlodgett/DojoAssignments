@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Update Cat</title>
+    </head>
+    <body>
+        <h1>Update this Cat!</h1>
+        <!-- TODO: show cat info? -->
+        <!-- TODO: need to sort out the url... POST:/cats/:id-->
+        <% var url = `/cats/${cat._id}`%>
+
+        <form class="" action=<%= url%> method="post">
+            Name:<input type="text" name="name" value="">
+            Color:<input type="text" name="color" value="">
+            Age:<input type="text" name="age" value="">
+            <button type="submit" name="button">Submit</button>
+        </form>
+        <a href="/">GO BACK</a>
+    </body>
+</html>
