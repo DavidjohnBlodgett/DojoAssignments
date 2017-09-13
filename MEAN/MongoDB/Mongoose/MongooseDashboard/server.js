@@ -21,7 +21,7 @@ var Cat = mongoose.model('Cat');
 
 // connect to db...
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/my_first_db');
+mongoose.connect('mongodb://localhost/my_first_db', { useMongoClient: true }); 
 
 // attach tooling...
 app.use(bodyParser.urlencoded({ extended: true }));

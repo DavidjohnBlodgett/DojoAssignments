@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Message Board</title>
+    </head>
+    <body>
+        <main>
+            <section>
+                <h1>The Dojo Message Board</h1>
+            </section>
+            <section>
+                <form class="" action="/posts" method="post">
+                    Name:<br><input required type="text" name="name" value=""><br>
+                    Message:<br><textarea  required name="content" rows="8" cols="80"></textarea><br>
+                    <button type="submit">Post message</button>
+                </form>
+            </section>
+            <section>
+                <% if(typeof(errors) != 'undefined' ) { %>
+                    <% for (var x in errors) { %>
+                        <h3><%= title %></h3>
+                        <h3><%= errors[x].message %></h3>
+                    <% } %>
+                <% } %>
+            </section>
+            <section id='posts'>
+                <% if(typeof(posts) != 'undefined' ) { %>
+                    <% for (var i in posts) { %>
+                        <article id='post' style="margin-left: 25px;">
+                            <h3>Name: <%= posts[i].name %></h3>
+                            <h3>Message: <%= posts[i].content %></h3>
+                            <section id='comments' style="margin-left: 25px;">
+                                <!-- if comments display -->
+                                <% if( posts[i].comments.length > 0 ) { %>
+                                    <% for (var x=0; x < posts[i].comments.length; x++) { %>
+                                        <p>Name: <%= posts[i].comments[x].name%></p>
+                                        <p>Comment: <%= posts[i].comments[x].content%></p>
+                                    <% } %>
+                                <% } %>
+                                <form class="" action="/posts/<%= posts[i]._id%>" method="post">
+                                    Name:<br><input required type="text" name="name" value=""><br>
+                                    Message:<br><textarea  required name="content" rows="8" cols="80"></textarea><br>
+                                    <button type="submit">Post comment</button>
+                                </form>
+                            </section>
+                        </article>
+                    <% } %>
+                <% } %>
+            </section>
+        </main>
+    </body>
+</html>
