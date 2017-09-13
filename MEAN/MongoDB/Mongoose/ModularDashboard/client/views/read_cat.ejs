@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Read Cat</title>
+    </head>
+    <body>
+        <% var update_url = `/cats/edit/${cat._id}`%>
+        <% var delete_url = `/cats/destroy/${cat._id}`%>
+        <h1><%= cat.name%></h1>
+        <h3>Color: <%= cat.color%></h3>
+        <h3>Age: <%= cat.age%></h3>
+        <form class="" action=<%= update_url%> method="get">
+            <button type="submit" name="button">EDIT</button>
+        </form>
+        <form class="" action=<%= delete_url%> method="post">
+            <button type="submit" name="button">DELETE</button>
+        </form>
+        <a href="/">GO BACK</a>
+    </body>
+</html>
