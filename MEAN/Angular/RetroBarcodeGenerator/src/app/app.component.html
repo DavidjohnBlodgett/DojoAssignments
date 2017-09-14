@@ -1,0 +1,8 @@
+<h1>{{title}}</h1>
+<div *ngFor='let color of arr' [ngStyle]="{
+    'height': '50px',
+    'width': '50px',
+    'background-color': color,
+    'display': 'inline-block'
+}">
+</div>
