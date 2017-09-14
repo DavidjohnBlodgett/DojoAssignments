@@ -12,7 +12,7 @@
         <!-- foreach user -->
         <tr *ngFor='let user of users'>
             <!-- foreach property in a user -->
-            <td>{{user.email}}</td>
+            <td>{{user.email | lowercase }}</td>
             <td *ngIf='user.important'>High</td>
             <td *ngIf='!user.important'>Low</td>
             <td>{{user.subject}}</td>
