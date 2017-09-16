@@ -12,10 +12,10 @@ export class AppComponent {
   // TODO: this timezone stuff is still not working as expected...
   today = new Date;
   localTime = this.today.getTime();
-  // timeZoneOffset = this.today.getTimezoneOffset() * 60000;
-  timeZoneOffset = this.today.getTimezoneOffset()
+  timeZoneOffset = this.today.getTimezoneOffset() * 60000;
+  // timeZoneOffset = this.today.getTimezoneOffset()
   utc = this.localTime + this.timeZoneOffset;
-  output = '';
+  output;
 
 
   // output;
@@ -25,7 +25,8 @@ export class AppComponent {
       if(val > 0){
           // set time...
           let result = new Date(this.utc + (3600000*val));
-          this.output = result.toLocaleString();
+        //   this.output = result.toString();
+          this.output = result;
       }
       else {
           // unset time...

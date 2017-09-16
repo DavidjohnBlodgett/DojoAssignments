@@ -1,0 +1,12 @@
+<h1>{{title}}</h1>
+
+<section>
+    <div
+        *ngFor='let i of switches; let inx = index'
+        [ngClass]="{'on': switches[inx], 'off': !switches[inx]}"
+        (click)='onClick(inx)'
+        >
+        <p *ngIf='switches[inx]'>ON</p>
+        <p *ngIf='!switches[inx]'>OFF</p>
+    </div>
+</section>

@@ -1,0 +1,25 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+div {
+    margin: 10px;
+    padding: 5px;
+    display: inline-block;
+    height: 20px;
+    width: 40px;
+    border: 1px solid black;
+    /*-webkit-box-shadow: 5px 5px 0 0 #7D7D7D;
+    box-shadow: 5px 5px 0 0 #7D7D7D;*/
+    text-align: center;
+
+}
+
+.on {
+    background-color: green;
+}
+
+.off {
+    background-color: red;
+}
