@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Registration Board</title>
+    </head>
+    <body>
+        <h1>Registration</h1>
+            <fieldset class='success' *ngIf='success'>
+                <p>Thank you for registering with us {{users[0].first_name}}.
+                    We will send you a comfirmation email to {{users[0].email}},
+                    and we will send all mail to {{users[0].street}}, {{users[0].city}} {{users[0].state}}.
+                </p>
+                <p>Have a wonderful day!</p>
+            </fieldset>
+        <fieldset>
+            <!-- <legend>Registration</legend> -->
+            <h2>Account Information</h2>
+            <form (submit)='onSubmit(); myNgForm.resetForm()' #myNgForm="ngForm"><br>
+
+                <label for="first_name">*First Name:</label>
+                <input
+                    type="text"
+                    name='first_name'
+                    required
+                    minlength="4"
+                    maxlength="24"
+                    [(ngModel)]='user.first_name'
+                    #first_name='ngModel'
+                >
+                    <div class='error' *ngIf='!first_name?.valid && first_name?.touched' >
+                        First name required.
+                    </div>
+                <br>
+
+                <label for="last_name">*Last Name:</label>
+                <input
+                    type="text"
+                    name='last_name'
+                    required
+                    minlength="4"
+                    maxlength="24"
+                    [(ngModel)]='user.last_name'
+                    #last_name='ngModel'
+                >
+                    <div class='error' *ngIf='!last_name?.valid && last_name?.touched' >
+                        Last name required.
+                    </div>
+                <br>
+
+                <label for="email">*Email:</label>
+                <input
+                    type="email"
+                    name='email'
+                    required
+                    minlength="4"
+                    maxlength="24"
+                    placeholder="yourname@yourdomain.com"
+                    pattern='[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+'
+                    [(ngModel)]='user.email'
+                    #email="ngModel"
+                >
+                    <div class='error' *ngIf='!email?.valid && email?.touched' >
+                        Email required.
+                    </div>
+                    <div class='error' *ngIf='!email?.valid && email?.dirty' >
+                        Valid email required.
+                    </div>
+                <br>
+
+                <label for="password">*Password:</label>
+                <input
+                    type="password"
+                    name='password'
+                    required
+                    minlength="10"
+                    maxlength="24"
+
+                    [(ngModel)]='user.password'
+                    #password="ngModel"
+                >
+                    <!-- pattern="^([a-zA-Z0-9@*#]{8,15})$" -->
+                    <div class='error' *ngIf='!password?.valid && password?.touched' >
+                        Password required.
+                    </div>
+                <br>
+
+                <label for="conf_pass">*Confirm pw:</label>
+                <input
+                    type="password"
+                    name="conf_pass"
+                    required
+                    minlength="10"
+                    maxlength="24"
+                    [(ngModel)]='user.conf_pass'
+                    #conf_pass="ngModel"
+                >
+                    <div class='error' *ngIf='!conf_pass?.valid && conf_pass?.touched' >
+                        Confirmation password required.
+                    </div>
+                <br>
+
+                <label for="street">*Street Address</label>
+                <input
+                    type="text"
+                    name="street"
+                    required
+                    [(ngModel)]='user.street'
+                    #street="ngModel"
+                >
+                    <div class='error' *ngIf='!street?.valid && street?.touched' >
+                        Street address required.
+                    </div>
+                <br>
+
+                <label for="apt">Unit/Apt #</label>
+                <input
+                    type="text"
+                    name="apt"
+                    [(ngModel)]='user.apt'
+                ><br>
+
+                <label for="city">*City</label>
+                <input
+                    type="text"
+                    name="city"
+                    required
+                    [(ngModel)]='user.city'
+                    #city="ngModel"
+                >
+                    <div class='error' *ngIf='!city?.valid && city?.touched' >
+                        City required.
+                    </div>
+                <br>
+
+                <label for="state">*State</label>
+                <select
+                    name="state"
+                    required
+                    [(ngModel)]='user.state'
+                    #state="ngModel"
+                >
+                    <option value="AL">Alabama</option>
+                	<option value="AK">Alaska</option>
+                	<option value="AZ">Arizona</option>
+                	<option value="AR">Arkansas</option>
+                	<option value="CA">California</option>
+                	<option value="CO">Colorado</option>
+                	<option value="CT">Connecticut</option>
+                	<option value="DE">Delaware</option>
+                	<option value="DC">District Of Columbia</option>
+                	<option value="FL">Florida</option>
+                	<option value="GA">Georgia</option>
+                	<option value="HI">Hawaii</option>
+                	<option value="ID">Idaho</option>
+                	<option value="IL">Illinois</option>
+                	<option value="IN">Indiana</option>
+                	<option value="IA">Iowa</option>
+                	<option value="KS">Kansas</option>
+                	<option value="KY">Kentucky</option>
+                	<option value="LA">Louisiana</option>
+                	<option value="ME">Maine</option>
+                	<option value="MD">Maryland</option>
+                	<option value="MA">Massachusetts</option>
+                	<option value="MI">Michigan</option>
+                	<option value="MN">Minnesota</option>
+                	<option value="MS">Mississippi</option>
+                	<option value="MO">Missouri</option>
+                	<option value="MT">Montana</option>
+                	<option value="NE">Nebraska</option>
+                	<option value="NV">Nevada</option>
+                	<option value="NH">New Hampshire</option>
+                	<option value="NJ">New Jersey</option>
+                	<option value="NM">New Mexico</option>
+                	<option value="NY">New York</option>
+                	<option value="NC">North Carolina</option>
+                	<option value="ND">North Dakota</option>
+                	<option value="OH">Ohio</option>
+                	<option value="OK">Oklahoma</option>
+                	<option value="OR">Oregon</option>
+                	<option value="PA">Pennsylvania</option>
+                	<option value="RI">Rhode Island</option>
+                	<option value="SC">South Carolina</option>
+                	<option value="SD">South Dakota</option>
+                	<option value="TN">Tennessee</option>
+                	<option value="TX">Texas</option>
+                	<option value="UT">Utah</option>
+                	<option value="VT">Vermont</option>
+                	<option value="VA">Virginia</option>
+                	<option value="WA">Washington</option>
+                	<option value="WV">West Virginia</option>
+                	<option value="WI">Wisconsin</option>
+                	<option value="WY">Wyoming</option>
+                </select>
+                    <div class='error' *ngIf='!state?.valid && state?.touched' >
+                        State required.
+                    </div>
+                <br>
+
+
+                <label for="lucky">*Are you feeling lucky:</label>
+                <input
+                    type="radio"
+                    name="lucky"
+                    value=true
+                    checked
+                    required
+                    [(ngModel)]='user.lucky'
+                    #lucky="ngModel"
+                >Yes
+                <input
+                    type="radio"
+                    name="lucky"
+                    value=false
+                >No
+                    <div class='error' *ngIf='!lucky?.valid && lucky?.touched' >
+                        lucky required.
+                    </div>
+                <br>
+
+                <button type="submit" name="button" disabled
+                    *ngIf='
+                        !first_name?.valid ||
+                        !last_name?.valid ||
+                        !email?.valid ||
+                        !password?.valid ||
+                        !conf_pass?.valid ||
+                        !street?.valid ||
+                        !city?.valid ||
+                        !state?.valid ||
+                        !lucky?.valid
+                    '
+                >Register</button>
+                <button type="submit" name="button"
+                *ngIf='
+                    first_name?.valid &&
+                    last_name?.valid &&
+                    email?.valid &&
+                    password?.valid &&
+                    conf_pass?.valid &&
+                    street?.valid &&
+                    city?.valid &&
+                    state?.valid &&
+                    lucky?.valid
+                '
+                >Register</button>
+            </form>
+            {{user.errors | json}}
+        </fieldset>
+    </body>
+</html>

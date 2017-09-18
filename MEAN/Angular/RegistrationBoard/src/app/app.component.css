@@ -1,0 +1,40 @@
+* {
+    /*margin: 0px;*/
+    /*padding: 0px;*/
+    /*border: 1px dotted red;*/
+}
+
+.error {
+    display: inline-block;
+    color: red;
+}
+
+.success {
+    color: green;
+}
+
+/*fieldset {
+    margin: 20px;
+}
+
+label {
+    display: block;
+}
+
+div {
+    display: inline-block;
+    vertical-align: top;
+    padding: 10px;
+}
+
+#labels {
+    text-align: right;
+}
+
+#inputs input{
+    padding-top: 40px;
+}
+
+form {
+
+}*/
