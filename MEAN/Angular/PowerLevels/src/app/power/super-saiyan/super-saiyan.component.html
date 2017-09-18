@@ -1,0 +1,7 @@
+<fieldset>
+    <legend>SuperSaiyanComponent</legend>
+    <p>Power Level:          {{ this.getNumber(num) }}</p>
+    <h3 *ngIf='this.getNumber(num) > 9000 && this.getNumber(num) < 20000'>"OVER 9000!"</h3>
+    <h3 *ngIf='this.getNumber(num) > 20000 && this.getNumber(num) < 50000'>"SUPERLATIVE POWERS!"</h3>
+    <h3 *ngIf='this.getNumber(num) === 50000'>"THE ONE"</h3>
+</fieldset>

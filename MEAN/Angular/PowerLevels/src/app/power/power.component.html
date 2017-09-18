@@ -1,0 +1,26 @@
+<fieldset>
+    <legend>PowerComponent</legend>
+    <form (submit)="onSubmit()">
+        Inital Power Level:
+        <select [(ngModel)]="newPower" name='newPower'>
+            <option *ngFor='let i of numbers' [value]='i'>
+                {{i}}
+            </option>
+        </select>
+        <input type="submit" name="submit" value="Calculate Powers">
+    </form>
+    <img [src]="fullImagePath" alt="goku.jpg" height="200px">
+
+    <section>
+        <div >
+            <app-human [num]='currentPower' class='child'></app-human>
+            <app-saiyan [num]='currentPower' class='child'></app-saiyan>
+            <app-super-saiyan [num]='currentPower' class='child'></app-super-saiyan>
+        </div>
+        <div >
+            <app-super-saiyan-two [num]='currentPower' class='child'></app-super-saiyan-two>
+            <app-super-saiyan-three [num]='currentPower' class='child'></app-super-saiyan-three>
+            <app-super-saiyan-four [num]='currentPower' class='child'></app-super-saiyan-four>
+        </div>
+    </section>
+</fieldset>

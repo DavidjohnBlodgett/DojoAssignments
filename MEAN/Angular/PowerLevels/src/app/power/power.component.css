@@ -1,0 +1,22 @@
+input {
+    width: 200px;
+    border: 1px solid black;
+    -webkit-box-shadow: 2px 2px 0 0 #ADADAD;
+    box-shadow: 2px 2px 0 0 #ADADAD;
+    text-align: center;
+    background-color: white;
+
+}
+form {
+    display: inline-block;
+    vertical-align: top;
+}
+img {
+    display: inline-block;
+    padding-left: 620px;
+}
+
+.child {
+    display: inline-block;
+    vertical-align: top;
+}
