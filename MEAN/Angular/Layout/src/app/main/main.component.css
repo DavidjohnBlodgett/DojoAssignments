@@ -1,0 +1,11 @@
+fieldset {
+    display: inline-block;
+    vertical-align: top;
+    width: 600px;
+    height: 400px;
+    margin-left: 20px;
+    background-color: #a0c6f6;
+}
+p {
+    margin: 10px;
+}

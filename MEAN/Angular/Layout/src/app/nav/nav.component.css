@@ -1,0 +1,15 @@
+.link {
+    margin: 10px;
+    width: 150px;
+    border: 1px solid black;
+    -webkit-box-shadow: 2px 2px 0 0 #ADADAD;
+    box-shadow: 2px 2px 0 0 #ADADAD;
+    text-align: center;
+    background-color: white;
+}
+fieldset {
+    width: 200px;
+    height: 400px;
+    display: inline-block;
+    background-color: #a0c6f6;
+}
