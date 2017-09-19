@@ -1,0 +1,46 @@
+section {
+    border: 1px solid black;
+}
+.quote {
+    vertical-align: top;
+    width: 600px;
+    height: 150px;
+    display: inline-block;
+    margin: 10px;
+}
+.votes {
+    vertical-align: top;
+    width: 200px;
+    display: inline-block;
+    text-align: center;
+}
+.action {
+    vertical-align: top;
+    width: 200px;
+    display: inline-block;
+}
+
+div {
+    height: 100px;
+}
+
+input {
+    width: 200px;
+    border: 1px solid black;
+    -webkit-box-shadow: 2px 2px 0 0 #ADADAD;
+    box-shadow: 2px 2px 0 0 #ADADAD;
+    text-align: center;
+    background-color: white;
+    margin-top: 5px;
+}
+
+#upvote {
+    background-color: #b7d6aa;
+}
+#downvote {
+    background-color: #e8999a;
+}
+#delete {
+    background-color: #333333;
+    color: white;
+}

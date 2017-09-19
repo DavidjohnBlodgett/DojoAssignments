@@ -1,0 +1,53 @@
+<!-- hello -->
+<section>
+    <h1>Add a Quote</h1>
+    <form (submit)='onSubmit(); myNgForm.resetForm()' #myNgForm="ngForm">
+        <textarea
+            name="quote"
+            rows="8"
+            cols="80"
+            required
+            minlength="4"
+            [(ngModel)]='quote.content'
+            #content='ngModel'
+        ></textarea>
+            <div class='error' *ngIf='!content?.valid && content?.dirty' >
+                Your quote must have at least 4 charactors.
+            </div>
+            <div class='error' *ngIf='!content?.valid && content?.touched' >
+                Quote is required.
+            </div>
+        <br>
+
+        Author:<input
+            type="text"
+            name="author"
+            value=""
+            required
+            minlength="1"
+            [(ngModel)]='quote.author'
+            #author='ngModel'
+        >
+            <div class='error' *ngIf='!author?.valid && author?.touched' >
+                Author is required.
+            </div>
+        <br>
+
+        <input *ngIf='!content?.valid || !author?.valid' type="submit" name="button" value="Add Quote" disabled>
+        <input *ngIf='content?.valid && author?.valid' type="submit" name="button" value="Add Quote">
+    </form>
+</section>
+<section>
+    <h1>Quotes List</h1>
+    <!-- just a test... will want a *ngFor -->
+    <app-quote
+        *ngFor='let i of quotes'
+        [quote]='i'
+        (aUpVoteEventEmitter)="upVote($event)"
+        (aDownVoteEventEmitter)="downVote($event)"
+        (aDeleteQuoteEventEmitter)="deleteQuote($event)"
+    ></app-quote>
+</section>
+
+
+<!-- (aQuoteEventEmitter)="dataFromChild($event)" -->

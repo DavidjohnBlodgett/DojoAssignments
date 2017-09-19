@@ -1,0 +1,22 @@
+<section>
+    <div class="quote">
+        <!-- <p>Lor em ipsum dolor sit amet, consectetur adipiscing elit. Praesent sagittis risus id augue laoreet, gravida molestie sem sollicitudin. Cras orci mi, posuere ac facilisis non, molestie sed risus. Sed in ex nec tortor laoreet iaculis id a augue. Aliquam rhoncus sed sapien vel fringilla. Donec rhoncus eget mauris a condimentum. Proin a risus neque. Curabitur in lacus diam. Mauris in augue ornare, eleifend erat sed, tincidunt quam. Morbi vitae rutrum mi.</p> -->
+        <p>{{quote.content}}</p>
+        <p>-{{quote.author}}</p>
+
+    </div>
+    <div class="votes">
+        <h1>+{{quote.votes}}</h1>
+    </div>
+    <div class="action">
+        <form (submit)='triggerUpVoteEvent($event)'>
+            <input type="submit" name="upvote" id="upvote" value="Up Vote">
+        </form>
+        <form (submit)='triggerDownVoteEvent($event)'>
+            <input type="submit" name="downvote" id="downvote" value="Down Vote">
+        </form>
+        <form (submit)='triggerDeleteQuoteEvent($event)'>
+            <input type="submit" name="delete" id="delete" value="Delete">
+        </form>
+    </div>
+</section>
