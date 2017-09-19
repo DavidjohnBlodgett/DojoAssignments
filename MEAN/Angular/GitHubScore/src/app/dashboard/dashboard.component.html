@@ -1,0 +1,23 @@
+<fieldset>
+    <section>
+        <h1>GitHub Score</h1>
+        <form (submit)='onSubmit()' #form='ngForm'>
+            GitHub Username:<input
+                type="text"
+                name="username"
+                value=""
+                [(ngModel)]='user.username'
+                #username='ngModel'
+            ><br>
+            <input type="submit" name="submit" id='submit' value="Calculate my GithubScore">
+        </form>
+    </section>
+    <section>
+        <h1>Your Score:{{ score }}</h1>
+        <p *ngIf='score > 0 && score < 20'  [ngStyle]="{ 'color' : 'red' }">Needs Work!</p>
+        <p *ngIf='score >= 20 && score < 50'  [ngStyle]="{ 'color' : 'orange' }">A Decent Start!</p>
+        <p *ngIf='score >= 50 && score < 100'  [ngStyle]="{ 'color' : 'black' }">Doing Good!</p>
+        <p *ngIf='score >= 100 && score < 200'  [ngStyle]="{ 'color' : 'green' }">Great Job!</p>
+        <p *ngIf='score >= 200'  [ngStyle]="{ 'color' : 'blue' }">Github Elite!</p>
+    </section>
+</fieldset>
