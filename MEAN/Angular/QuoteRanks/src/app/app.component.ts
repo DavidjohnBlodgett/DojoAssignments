@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Quote } from './Quote';
+import { Quote } from './quote';
 
 @Component({
   selector: 'app-root',
@@ -10,13 +10,10 @@ export class AppComponent {
     title = 'app';
     quote = new Quote();
     quotes = [];
-    count = 0;
 
     onSubmit() {
-        this.quote.id = this.count;
         this.quotes.push(this.quote);
         this.quote = new Quote();
-        this.count++;
         this.sortQuotes();
     }
     dataFromChild(eventData){
