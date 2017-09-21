@@ -1,0 +1,7 @@
+<section>
+    <img [src]='item.url' alt="pic" height="50px" width="50px">
+    <h2>{{item.title}}</h2>
+    <p>{{item.price}}</p>
+    <input [routerLink]="['/products','edit',item.id]" type="button" name="edit" value="EDIT">
+    <input (click)='onDelete()' type="button" name="delete" value="DELETE">
+</section>

@@ -1,0 +1,11 @@
+<h1>PPM - Project Product Management</h1>
+<section>
+    <a [routerLink]="['home']">Home</a>
+    <div style="border-left:1px solid #000;height:20px"></div>
+    <a [routerLink]="['products']">Product List</a>
+    <div style="border-left:1px solid #000;height:20px"></div>
+    <a [routerLink]="['products','new']">Product Creation</a>
+</section>
+<router-outlet></router-outlet>
+
+<!-- (createEventEmitter)="onCreate($event)" -->
