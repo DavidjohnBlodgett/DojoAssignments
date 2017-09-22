@@ -1,0 +1,99 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Verdana, Geneva, sans-serif
+}
+
+main {
+    margin: 20px;
+}
+
+#bikerapper {
+    margin: 40px;
+}
+
+#bikerapper h2 {
+    margin-bottom: 10px;
+}
+
+#bikerapper #bike {
+    border: 1px solid black;
+    background-color: #efeeef;
+    /*text-align: center;*/
+}
+
+#bikerapper #bike img {
+    margin: 10px;
+    height: 200px;
+    width: 250px;
+    display: inline-block;
+}
+
+#bikerapper #bike #desc {
+    padding: 20px;
+    display: inline-block;
+    vertical-align: top;
+    border: 1px dotted red;
+    width: 400px;
+    word-wrap: break-word;
+}
+
+/*#bikerapper #bike #desc p {
+    width: 400px;
+}*/
+
+#bikerapper #bike #price {
+    padding: 20px;
+    display: inline-block;
+    vertical-align: top;
+    border: 1px dotted red;
+    width: 200px;
+    text-align: right;
+}
+
+#bikerapper h2 {
+    color: #2f7ae1;
+}
+
+#loginAndRegWrapper {
+    /*border: 1px solid black;*/
+    text-align: center;
+}
+
+#loginAndRegWrapper #login {
+    border: 1px solid black;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#loginAndRegWrapper #reg {
+    border: 1px solid black;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#loginAndRegWrapper #login #loginButton {
+    background-color: #149c20;
+    color: white;
+    margin: 20px;
+    width: 200px;
+    border: 1px solid black;
+    -webkit-box-shadow: 2px 2px 0 0 #ADADAD;
+    box-shadow: 2px 2px 0 0 #ADADAD;
+    text-align: center;
+}
+
+#loginAndRegWrapper #reg #regButton {
+    background-color: #317be1;
+    color: white;
+    margin: 20px;
+    width: 200px;
+    border: 1px solid black;
+    -webkit-box-shadow: 2px 2px 0 0 #ADADAD;
+    box-shadow: 2px 2px 0 0 #ADADAD;
+    text-align: center;
+}
+
+.alert {
+    color: red;
+}

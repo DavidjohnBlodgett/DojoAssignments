@@ -1,0 +1,178 @@
+<!-- bike of the day -->
+<div id='bikerapper'>
+    <h2>Bike of the day!</h2>
+    <section id='bike'>
+        <img src="https://dstqaa92re5c4.cloudfront.net/Images/Giant/Vibes/2017/bikecatalogueblocks/off-road_3.jpg" alt="imgPlaceholder" >
+        <article id='desc'>
+            <h3>Title(placeholder)</h3>
+            <p>hdfhsdkjfhkjhadskhfsdjkhfksdhfksjdhflksdjhflkajshfdjahdskfjhsdkfhlksdjhfkjsdhfkjhsdkjfhlksdhfdkjdkslkajshdkjfhdkjhfksdhdflkadsjhflkjsdhfkjhsdkfjhskdjhflakjhdfkjsdfkjhdslkjfhksdhfljshdfkjhsdlkfhsdkjhfkshdkfhsdkjfhksdhfkhsjk(placeholder)</p>
+        </article>
+        <article id='price'>
+            <h3>$950(placeholder)</h3>
+            <p>Los Angeles, CA(placeholder)</p>
+        </article>
+    </section>
+</div>
+
+<!-- login & reg -->
+<div id='loginAndRegWrapper'>
+
+    <!-- login -->
+    <div id='login'>
+        <form (submit)='onSubmitLogin()' #loginForm='ngForm'>
+            <table>
+                <!-- ++++++++ -->
+                <tr>
+                    <td>
+                        <p>*Email:</p>
+                    </td>
+                    <td>
+                        <input
+                            type="text"
+                            name="email"
+                            value=""
+                        >
+                    </td>
+                </tr>
+
+                <!-- ++++++++ -->
+                <tr>
+                    <td>
+                        <p>*Password:</p>
+                    </td>
+                    <td>
+                        <input
+                            type="text"
+                            name="password"
+                            value=""
+                        >
+                    </td>
+                </tr>
+            </table>
+            <input type="submit" name="loginButton" id='loginButton' value="Login">
+        </form>
+    </div>
+
+    <!-- reg -->
+    <div id='reg'>
+        <form (submit)='onSubmitReg()' #regForm='ngForm'>
+            <table>
+                <!-- ++++++++ -->
+                <tr>
+                    <td>
+                        <p>*First Name:</p>
+                    </td>
+                    <td>
+                        <input
+                            type="text"
+                            name="first_name"
+                            value=""
+                            required
+                            minlength="4"
+                            maxlength="24"
+                            [(ngModel)]='user.first_name'
+                            #first_name='ngModel'
+                        >
+                    </td>
+                </tr>
+                <tr *ngIf="first_name.invalid && (first_name.dirty || first_name.touched)"
+                         class="alert">
+                         <td></td>
+                    <td *ngIf="first_name.errors.required">
+                        Name is required.
+                    </td>
+                    <td *ngIf="first_name.errors.minlength">
+                        Name must be at least 4 characters long.
+                    </td>
+                </tr>
+
+                <!-- ++++++++ -->
+                <tr>
+                    <td>
+                        <p>*Last Name:</p>
+                    </td>
+                    <td>
+                        <input
+                            type="text"
+                            name="last_name"
+                            value=""
+                            required
+                            minlength="4"
+                            maxlength="24"
+                            [(ngModel)]='user.last_name'
+                            #last_name='ngModel'
+                        >
+                    </td>
+                </tr>
+                <tr *ngIf="last_name.invalid && (last_name.dirty || last_name.touched)"
+                         class="alert">
+                         <td></td>
+                    <td *ngIf="last_name.errors.required">
+                        Name is required.
+                    </td>
+                    <td *ngIf="last_name.errors.minlength">
+                        Name must be at least 4 characters long.
+                    </td>
+                </tr>
+
+                <!-- ++++++++ -->
+                <tr>
+                    <td>
+                        <p>*Email:</p>
+                    </td>
+                    <td>
+                        <input
+                            type="text"
+                            name="email"
+                            value=""
+                            required
+                            minlength="4"
+                            maxlength="24"
+                            placeholder="yourname@yourdomain.com"
+                            pattern='[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+'
+                            [(ngModel)]='user.email'
+                            #email='ngModel'
+                        >
+                    </td>
+                </tr>
+
+                <!-- ++++++++ -->
+                <tr>
+                    <td>
+                        <p>*Password:</p>
+                    </td>
+                    <td>
+                        <input
+                            type="password"
+                            name="password"
+                            value=""
+                            required
+                            [(ngModel)]='user.password'
+                            #password='ngModel'
+                        >
+                    </td>
+                </tr>
+
+                <!-- ++++++++ -->
+                <tr>
+                    <td>
+                        <p>*Password Confirmation:</p>
+                    </td>
+                    <td>
+                        <input
+                            type="password"
+                            name="conf_pass"
+                            value=""
+                            required
+                            [(ngModel)]='user.conf_pass'
+                            #conf_pass='ngModel'
+                        >
+                    </td>
+                </tr>
+            </table>
+            <input type="submit" name="regButton" id='regButton' value="Register" [disabled]='regForm.invalid'>
+        </form>
+    </div>
+
+</div>
+{{ user | json }}

@@ -1,0 +1,13 @@
+
+[ ] LOGIN
+    [ ] if users session has userid param then redirect to /browse
+    [ ] UsersService
+    [ ] handle the model on the front end
+    [ ] create model on the backend
+    [ ] C
+    [ ] R
+    [ ] U
+    [ ] D
+    [ ] setup forms and setup submit.... and bind form to an obj in component
+
+[ ] set routing to have / goto login... (maybe at this page we check if logged in and redirect?)
