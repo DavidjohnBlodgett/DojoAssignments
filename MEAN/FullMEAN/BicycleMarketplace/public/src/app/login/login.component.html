@@ -31,6 +31,13 @@
                             type="text"
                             name="email"
                             value=""
+                            required
+                            minlength="4"
+                            maxlength="24"
+                            placeholder="yourname@yourdomain.com"
+                            pattern='[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+'
+                            [(ngModel)]='userLogin.email'
+                            #email='ngModel'
                         >
                     </td>
                 </tr>
@@ -42,9 +49,12 @@
                     </td>
                     <td>
                         <input
-                            type="text"
+                            type="password"
                             name="password"
                             value=""
+                            required
+                            [(ngModel)]='userLogin.password'
+                            #password='ngModel'
                         >
                     </td>
                 </tr>
@@ -70,7 +80,7 @@
                             required
                             minlength="4"
                             maxlength="24"
-                            [(ngModel)]='user.first_name'
+                            [(ngModel)]='userReg.first_name'
                             #first_name='ngModel'
                         >
                     </td>
@@ -99,7 +109,7 @@
                             required
                             minlength="4"
                             maxlength="24"
-                            [(ngModel)]='user.last_name'
+                            [(ngModel)]='userReg.last_name'
                             #last_name='ngModel'
                         >
                     </td>
@@ -130,7 +140,7 @@
                             maxlength="24"
                             placeholder="yourname@yourdomain.com"
                             pattern='[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+'
-                            [(ngModel)]='user.email'
+                            [(ngModel)]='userReg.email'
                             #email='ngModel'
                         >
                     </td>
@@ -147,7 +157,7 @@
                             name="password"
                             value=""
                             required
-                            [(ngModel)]='user.password'
+                            [(ngModel)]='userReg.password'
                             #password='ngModel'
                         >
                     </td>
@@ -164,7 +174,7 @@
                             name="conf_pass"
                             value=""
                             required
-                            [(ngModel)]='user.conf_pass'
+                            [(ngModel)]='userReg.conf_pass'
                             #conf_pass='ngModel'
                         >
                     </td>
@@ -175,4 +185,5 @@
     </div>
 
 </div>
-{{ user | json }}
+<!-- {{ users | json }} -->
+{{ currentUser | json }}

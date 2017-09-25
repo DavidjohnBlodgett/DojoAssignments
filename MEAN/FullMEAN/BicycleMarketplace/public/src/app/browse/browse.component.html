@@ -1,0 +1,18 @@
+<main>
+    <nav>
+        <a [routerLink]="['/browse']" class='block'>Browse</a>
+        <div style="border-left:1px solid #000;height:20px" class='block'></div>
+        <a [routerLink]="['/my-listings']" class='block'>My Listings</a>
+        <div style="border-left:1px solid #000;height:20px" class='block'></div>
+        <a href="#">Log off</a>
+    </nav>
+    <section>
+        <div class="search">
+            <form (submit)='onSearch()'>
+                Search:<textarea name="search" rows="1" cols="80"></textarea>
+                <button type="submit" name="searchButton" class="searchButton">Search</button>
+            </form>
+        </div>
+        <app-bike-list></app-bike-list>
+    </section>
+</main>

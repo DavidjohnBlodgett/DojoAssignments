@@ -23,7 +23,7 @@ app.use(express.static(path.join(__dirname, './public/dist')));
 
 
 // require the mongoose configuration file which does the rest for us
-// require('./server/config/mongoose.js');
+require('./server/config/mongoose.js');
 
 // Handle routes
 var routes_setter = require('./server/config/routes');

@@ -1,0 +1,32 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+section {
+    border: 1px solid black;
+    background-color: #dddddd;
+}
+nav {
+    
+}
+
+.block {
+    display: inline-block;
+}
+.search {
+    margin: 10px;
+    text-align: center;
+    vertical-align: top;
+}
+.searchButton {
+    display: inline-block;
+    vertical-align: top;
+    background-color: #149c20;
+    color: white;
+    /*margin: 20px;*/
+    width: 100px;
+    border: 1px solid black;
+    -webkit-box-shadow: 2px 2px 0 0 #000000;
+    box-shadow: 2px 2px 0 0 #000000;
+    text-align: center;
+}

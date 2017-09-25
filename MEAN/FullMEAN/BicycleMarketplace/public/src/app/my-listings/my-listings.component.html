@@ -1,0 +1,47 @@
+<main>
+    <nav>
+        <a [routerLink]="['/browse']" class='block'>Browse</a>
+        <div style="border-left:1px solid #000;height:20px" class='block'></div>
+        <a [routerLink]="['/my-listings']" class='block'>My Listings</a>
+        <div style="border-left:1px solid #000;height:20px" class='block'></div>
+        <a href="#">Log off</a>
+    </nav>
+
+    <section class="grey">
+        <h1>Create Listing</h1>
+        <form (submit)='onCreate()' #myBikeForm='ngForm'>
+            <!-- TODO: add fields for creating a bike -->
+            pic_url:<input type="text" name="pic_url" value=""
+                required
+                [(ngModel)]='bikeForm.pic_url'
+                #pic_url='ngModel'
+            ><br>
+            title:<input type="text" name="title" value=""
+                required
+                [(ngModel)]='bikeForm.title'
+                #title='ngModel'
+            ><br>
+            desc:<textarea name="desc" rows="8" cols="80"
+                required
+                [(ngModel)]='bikeForm.desc'
+                #desc='ngModel'
+            ></textarea><br>
+            price:<input type="number" name="price" value=""
+                required
+                [(ngModel)]='bikeForm.price'
+                #price='ngModel'
+            ><br>
+            location:<input type="text" name="location" value=""
+                required
+                [(ngModel)]='bikeForm.location'
+                #location='ngModel'
+            ><br>
+            <button type="submit" name="button">Create</button>
+        </form>
+    </section>
+
+    <section class="grey">
+        <h1>Edit/Delete Listings</h1>
+        {{ userBikes | json }}
+    </section>
+</main>

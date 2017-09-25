@@ -1,13 +1,21 @@
 
-[ ] LOGIN
-    [ ] if users session has userid param then redirect to /browse
-    [ ] UsersService
-    [ ] handle the model on the front end
-    [ ] create model on the backend
+[ ] LOGIN (USERS)
+    [x] UsersService
+    [x] handle the model on the front end
+    [x] create model on the backend
+    [x] C
+    [x] R
+    [-] U
+    [-] D
+    [x] setup forms and setup submit.... and bind form to an obj in component
+    [ ] need to have your reroute checks on every page but login~ (I think...)
+
+[ ] BIKES
+
+    [x] bikeService
+    [x] handle the model on the front end
+    [x] create model on the backend & associations
     [ ] C
     [ ] R
     [ ] U
     [ ] D
-    [ ] setup forms and setup submit.... and bind form to an obj in component
-
-[ ] set routing to have / goto login... (maybe at this page we check if logged in and redirect?)
