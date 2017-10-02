@@ -1,0 +1,8 @@
+/Users/davidjohn/src/DojoAssignments/netCore/LanguageEssentials/BoxingUnboxing/bin/Debug/netcoreapp1.1/BoxingUnboxing.deps.json
+/Users/davidjohn/src/DojoAssignments/netCore/LanguageEssentials/BoxingUnboxing/bin/Debug/netcoreapp1.1/BoxingUnboxing.runtimeconfig.json
+/Users/davidjohn/src/DojoAssignments/netCore/LanguageEssentials/BoxingUnboxing/bin/Debug/netcoreapp1.1/BoxingUnboxing.runtimeconfig.dev.json
+/Users/davidjohn/src/DojoAssignments/netCore/LanguageEssentials/BoxingUnboxing/bin/Debug/netcoreapp1.1/BoxingUnboxing.dll
+/Users/davidjohn/src/DojoAssignments/netCore/LanguageEssentials/BoxingUnboxing/bin/Debug/netcoreapp1.1/BoxingUnboxing.pdb
+/Users/davidjohn/src/DojoAssignments/netCore/LanguageEssentials/BoxingUnboxing/obj/Debug/netcoreapp1.1/BoxingUnboxing.AssemblyInfo.cs
+/Users/davidjohn/src/DojoAssignments/netCore/LanguageEssentials/BoxingUnboxing/obj/Debug/netcoreapp1.1/BoxingUnboxing.dll
+/Users/davidjohn/src/DojoAssignments/netCore/LanguageEssentials/BoxingUnboxing/obj/Debug/netcoreapp1.1/BoxingUnboxing.pdb
