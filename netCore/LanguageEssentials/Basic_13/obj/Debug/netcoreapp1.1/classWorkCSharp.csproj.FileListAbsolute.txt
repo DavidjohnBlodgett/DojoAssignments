@@ -1,0 +1,8 @@
+/Users/davidjohn/src/tmp/classWorkCSharp/bin/Debug/netcoreapp1.1/classWorkCSharp.deps.json
+/Users/davidjohn/src/tmp/classWorkCSharp/bin/Debug/netcoreapp1.1/classWorkCSharp.runtimeconfig.json
+/Users/davidjohn/src/tmp/classWorkCSharp/bin/Debug/netcoreapp1.1/classWorkCSharp.runtimeconfig.dev.json
+/Users/davidjohn/src/tmp/classWorkCSharp/bin/Debug/netcoreapp1.1/classWorkCSharp.dll
+/Users/davidjohn/src/tmp/classWorkCSharp/bin/Debug/netcoreapp1.1/classWorkCSharp.pdb
+/Users/davidjohn/src/tmp/classWorkCSharp/obj/Debug/netcoreapp1.1/classWorkCSharp.AssemblyInfo.cs
+/Users/davidjohn/src/tmp/classWorkCSharp/obj/Debug/netcoreapp1.1/classWorkCSharp.dll
+/Users/davidjohn/src/tmp/classWorkCSharp/obj/Debug/netcoreapp1.1/classWorkCSharp.pdb
