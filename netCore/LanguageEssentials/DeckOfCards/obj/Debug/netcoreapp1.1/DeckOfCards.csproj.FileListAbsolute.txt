@@ -1,0 +1,8 @@
+/Users/davidjohn/src/DojoAssignments/netCore/LanguageEssentials/DeckOfCards/bin/Debug/netcoreapp1.1/DeckOfCards.deps.json
+/Users/davidjohn/src/DojoAssignments/netCore/LanguageEssentials/DeckOfCards/bin/Debug/netcoreapp1.1/DeckOfCards.runtimeconfig.json
+/Users/davidjohn/src/DojoAssignments/netCore/LanguageEssentials/DeckOfCards/bin/Debug/netcoreapp1.1/DeckOfCards.runtimeconfig.dev.json
+/Users/davidjohn/src/DojoAssignments/netCore/LanguageEssentials/DeckOfCards/bin/Debug/netcoreapp1.1/DeckOfCards.dll
+/Users/davidjohn/src/DojoAssignments/netCore/LanguageEssentials/DeckOfCards/bin/Debug/netcoreapp1.1/DeckOfCards.pdb
+/Users/davidjohn/src/DojoAssignments/netCore/LanguageEssentials/DeckOfCards/obj/Debug/netcoreapp1.1/DeckOfCards.AssemblyInfo.cs
+/Users/davidjohn/src/DojoAssignments/netCore/LanguageEssentials/DeckOfCards/obj/Debug/netcoreapp1.1/DeckOfCards.dll
+/Users/davidjohn/src/DojoAssignments/netCore/LanguageEssentials/DeckOfCards/obj/Debug/netcoreapp1.1/DeckOfCards.pdb
