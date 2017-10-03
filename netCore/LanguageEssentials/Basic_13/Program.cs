@@ -129,7 +129,7 @@ namespace classWorkCSharp
             int max = 0;
             int sum = 0; 
             for (int i = 0; i < arr.Length; i++) {
-                if(arr[i] < min) {
+                if(arr[i] < min || min == 0) {
                     min = arr[i];
                 }
                 if(arr[i] > max) {
