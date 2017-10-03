@@ -1,0 +1,8 @@
+/Users/davidjohn/src/DojoAssignments/netCore/LanguageEssentials/WizardNinjaSamurai/bin/Debug/netcoreapp1.1/WizardNinjaSamurai.deps.json
+/Users/davidjohn/src/DojoAssignments/netCore/LanguageEssentials/WizardNinjaSamurai/bin/Debug/netcoreapp1.1/WizardNinjaSamurai.runtimeconfig.json
+/Users/davidjohn/src/DojoAssignments/netCore/LanguageEssentials/WizardNinjaSamurai/bin/Debug/netcoreapp1.1/WizardNinjaSamurai.runtimeconfig.dev.json
+/Users/davidjohn/src/DojoAssignments/netCore/LanguageEssentials/WizardNinjaSamurai/obj/Debug/netcoreapp1.1/WizardNinjaSamurai.AssemblyInfo.cs
+/Users/davidjohn/src/DojoAssignments/netCore/LanguageEssentials/WizardNinjaSamurai/bin/Debug/netcoreapp1.1/WizardNinjaSamurai.dll
+/Users/davidjohn/src/DojoAssignments/netCore/LanguageEssentials/WizardNinjaSamurai/bin/Debug/netcoreapp1.1/WizardNinjaSamurai.pdb
+/Users/davidjohn/src/DojoAssignments/netCore/LanguageEssentials/WizardNinjaSamurai/obj/Debug/netcoreapp1.1/WizardNinjaSamurai.dll
+/Users/davidjohn/src/DojoAssignments/netCore/LanguageEssentials/WizardNinjaSamurai/obj/Debug/netcoreapp1.1/WizardNinjaSamurai.pdb
