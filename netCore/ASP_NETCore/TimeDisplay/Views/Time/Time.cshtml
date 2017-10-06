@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Time Display" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    @{
+        DateTime curDate = DateTime.Now;
+        string time = curDate.ToString("MMM dd yyyy");
+        <main style="text-align: center">
+            <h2>The current time and date:</h2>
+            <div style="border: 1px solid black; width: 200px; display: inline-block">
+                <p>@time</p>
+                <p>@curDate.ToString("t")</p>
+            </div>
+        </main>
+    }
+</body>
+</html>
