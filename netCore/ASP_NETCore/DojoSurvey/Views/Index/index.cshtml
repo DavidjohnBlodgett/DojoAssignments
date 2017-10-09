@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Dojo Survey</title>
+    </head>
+    <body>
+        <form action="/result" method="post">
+            <section>
+                <label for="name">Your Name:</label>
+                <input type="text" name="name" value="">
+            </section>
+            <section>
+                <label for="location">Dojo Location:</label>
+                <select name="location">
+                    <option value="Seattle">Seattle</option>
+                    <option value="OverTheRanbow">OverTheRanbow</option>
+                    <option value="AcrossThePond">AcrossThePond</option>
+                </select>
+            </section>
+            <section>
+                <label for="lang">Favorite Languge:</label>
+                <select name="lang">
+                    <option value="Python">Python</option>
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="C#">C#</option>
+                </select>
+            </section>
+            <section class="Comment-Block">
+                <label for="comment">Comment (Optional)</label>
+                <textarea name="comment" rows="8" cols="80"></textarea>
+            </section>
+            <button type="submit" name="button">Button</button>
+        </form>
+    </body>
+</html>
