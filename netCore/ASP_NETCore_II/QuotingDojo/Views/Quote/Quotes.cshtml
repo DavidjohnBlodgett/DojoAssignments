@@ -1,0 +1,24 @@
+<h1>Here are the awesome quotes!</h1>
+<!-- <h1>@ViewBag.quotes</h1> -->
+@foreach(var elm in ViewBag.quotes) {
+    string name = "";
+    string quote = "";
+    DateTime createdAt = DateTime.Now;
+    foreach(var item in elm) {    
+        if(item.Key == "name"){
+             name = item.Value;
+        }
+        if(item.Key == "quote"){
+             quote = item.Value;
+        }
+        if(item.Key == "createdAt"){
+            if(item.Value != null){
+                createdAt = item.Value;
+            }
+        }
+    }
+    <p>"@quote"</p>
+    <p>-@name at @createdAt</p>
+    <div style="border: 1px solid black; hieght: 2px;"></div>
+    
+}

@@ -1,0 +1,19 @@
+<h1>Welcome to Quoting Dojo</h1>
+<form action="/quotes" method="post">
+    <table>
+        <tr>
+            <td>Your Name:</td>
+            <td><input type="text" name="name"></td>
+        </tr>
+        <tr>
+            <td>Your Quote:</td>
+            <td><textarea name="quote" id="" cols="30" rows="10"></textarea></td>
+        </tr>
+        <tr>
+            <td><button type="submit">Add my quote!</button></td>
+            <td><form action="/quotes" method="get">
+                <button type="submit">Skip to quotes!</button>
+            </form></td>
+        </tr>
+    </table>
+</form>
