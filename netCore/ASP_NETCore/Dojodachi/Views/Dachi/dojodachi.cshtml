@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="~/css/style.css"/>
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <div>
+            <p id="stats" class="centered">Fullness: @ViewBag.fullness Happiness: @ViewBag.happiness Meals: @ViewBag.meals Energy: @ViewBag.energy </p>
+        </div>
+        <div>
+            <section>
+                <!-- x box place holder -->
+            </section>
+            <section>
+                <!-- message display -->
+                <p class="centered">@ViewBag.message</p>
+            </section>
+            <section class="centered">
+                @if(ViewBag.end == true){ 
+                    <form action="/reset" class="block" method="post">
+                        <button type="submit" id="reset">Restart?</button>
+                    </form>
+                } else {
+                    <!-- button container -->
+                    <form action="/feed" class="block" method="post">
+                        <button type="submit" id="feed">Feed</button>
+                    </form>
+                    <form action="/play" class="block" method="post">
+                        <button type="submit" id="play">Play</button>
+                    </form>
+                    <form action="/work" class="block" method="post">
+                        <button type="submit" id="work">Work</button>
+                    </form>
+                    <form action="/sleep" class="block" method="post">
+                        <button type="submit" id="sleep">Sleep</button>
+                    </form> 
+                }
+            </section>
+        </div>
+        <div>
+
+        </div>
+        
+
+    </main>
+    
+    
+</body>
+</html>
