@@ -18,8 +18,7 @@ namespace FormSubmission.Controllers {
                 email = email,
                 password = password
             };
-            // TryValidateModel(NewUser);
-            if(ModelState.IsValid){
+            if(TryValidateModel(NewUser)){
                 return View("Success");    
             } else {
                 ViewBag.errors = ModelState.Values;

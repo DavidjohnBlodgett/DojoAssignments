@@ -5,13 +5,19 @@ namespace FormSubmission.Models
     public class User : BaseEntity
     {
         [Required]
-        [MinLength(3)]
+        [MinLength(4)]
         public string first_name { get; set; }
 
         [Required]
-        [MinLength(3)]
+        [MinLength(4)]
         public string last_name { get; set; }
 
+        [Required]
+        [Range(0,int.MaxValue)]
+        // [Range(0,1000)]
+        // [RegularExpression("([0-9])+", ErrorMessage = "Please enter valid Number")]
+        // [RegularExpression("^([0-9])+", ErrorMessage = "Please enter valid Number")]
+        // [RegularExpression("^[0-9]+", ErrorMessage = "Please enter valid Number")]
         public int age { get; set; }
 
         [Required]
@@ -20,6 +26,7 @@ namespace FormSubmission.Models
 
         [Required]
         [DataType(DataType.Password)]
+        [MinLength(8)]
         public string password { get; set; }
     }
 }
