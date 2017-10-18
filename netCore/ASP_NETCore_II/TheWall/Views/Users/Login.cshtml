@@ -1,0 +1,43 @@
+<h1 class="row top-buffer" >Registration</h1>
+
+<div class="row top-buffer" style="border: 1px solid grey; hieght: 1px;"></div>
+
+<form class="row top-buffer" action="/users" method="post">
+    <table>
+        <tr>
+            <td>First Name</td><td><input type="text" name="first_name"></td>
+        </tr>
+        <tr>
+            <td>Last Name</td><td><input type="text" name="last_name"></td>
+        </tr>
+        <tr>
+            <td>Email Address</td><td><input type="email" name="email"></td>
+        </tr>
+        <tr>
+            <td>Password</td><td><input type="password" name="password"></td>
+        </tr>
+        <tr>
+            <td><button type="submit">Submit</button></td>
+        </tr>
+    </table>
+</form>
+
+<div class="row top-buffer"></div>
+
+<h1 class="row top-buffer" >Login</h1>
+
+<div class="row top-buffer" style="border: 1px solid grey; hieght: 1px;"></div>
+
+<form class="row top-buffer" action="/users/login" method="post">
+    <table>
+        <tr>
+            <td>Email Address</td><td><input type="email" name="email"></td>
+        </tr>
+        <tr>
+            <td>Password</td><td><input type="password" name="password"></td>
+        </tr>
+        <tr>
+            <td><button type="submit">Login</button></td>
+        </tr>
+    </table>
+</form>
