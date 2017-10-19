@@ -4,11 +4,17 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using TheWall.Models;
-using DbConnection;
 using System.Linq;
 
 namespace TheWall.Controllers {
     public class UsersController : Controller {
+
+        private readonly DbConnector _dbConnector;
+ 
+        public UsersController(DbConnector connect)
+        {
+            _dbConnector = connect;
+        }
 
         [HttpGet]
         [Route("")]
@@ -33,9 +39,9 @@ namespace TheWall.Controllers {
                 ViewBag.name = HttpContext.Session.GetString("user_name");
 
                 // GET from DB...
-                List<Dictionary<string, object>> AllUsers = DbConnector.Query("SELECT * FROM users").ToList();
-                List<Dictionary<string, object>> AllMessages = DbConnector.Query("SELECT * FROM messages").ToList();
-                List<Dictionary<string, object>> AllComments = DbConnector.Query("SELECT * FROM comments").ToList();
+                List<Dictionary<string, object>> AllUsers = _dbConnector.Query("SELECT * FROM users").ToList();
+                List<Dictionary<string, object>> AllMessages = _dbConnector.Query("SELECT * FROM messages").ToList();
+                List<Dictionary<string, object>> AllComments = _dbConnector.Query("SELECT * FROM comments").ToList();
 
                 // Sort them by created time descending...
                 AllMessages = AllMessages.OrderByDescending((message) => message["created_at"]).ToList();
@@ -94,18 +100,33 @@ namespace TheWall.Controllers {
             };
 
             if( ModelState.IsValid ) {
+
+                // TODO: try catch on INSERT and return error if failed... "User with this info already exists"
+
+                // get from db...
+                List<Dictionary<string, object>> AllUsers = _dbConnector.Query("SELECT * FROM users");
+                List<Dictionary<string, object>> usr = AllUsers.Where(row => (string)row["email"] == user.email).ToList(); // gives back a list...
+
+                // check if user already exists...
+                if(usr.Count > 0){
+                    // FIXME: need to add an error for this case...
+                    // need to render view to support model binded errors...
+                    return View("Login");
+                }
+
                 // insert to DB...
                 string queryString = "INSERT INTO users (first_name, last_name, email, password, created_at, updated_at) VALUES (\"" + NewUser.first_name + "\",\"" + NewUser.last_name + "\", \"" + NewUser.email + "\", \"" + NewUser.password + "\", NOW(), NOW())";
-                DbConnector.Query(queryString);
+                _dbConnector.Query(queryString);
 
                 // set session... by getting the created user id...
-                List<Dictionary<string, object>> AllUsers = DbConnector.Query("SELECT * FROM users WHERE email=\"" + NewUser.email +"\"");
-                HttpContext.Session.SetString("user_name", (string)AllUsers[0]["first_name"]);
-                HttpContext.Session.SetInt32("user_id", (int)AllUsers [0]["id"]);
+                List<Dictionary<string, object>> CurrentUser = _dbConnector.Query("SELECT * FROM users WHERE email=\"" + NewUser.email +"\"");
+                HttpContext.Session.SetString("user_name", (string)CurrentUser[0]["first_name"]);
+                HttpContext.Session.SetInt32("user_id", (int)CurrentUser[0]["id"]);
 
                 return RedirectToAction("Index");    
             } else {
-                return RedirectToAction("Index");
+                // need to render view to support model binded errors...
+                return View("Login");
             }
         }
 
@@ -116,7 +137,7 @@ namespace TheWall.Controllers {
 
             if( ModelState.IsValid ) {
                 // get from db...
-                List<Dictionary<string, object>> AllUsers = DbConnector.Query("SELECT * FROM users");
+                List<Dictionary<string, object>> AllUsers = _dbConnector.Query("SELECT * FROM users");
                 List<Dictionary<string, object>> usr = AllUsers.Where(row => (string)row["email"] == user.email && (string)row["password"] == user.password).ToList(); // gives back a list...
 
                 if(usr.Count > 0){
@@ -128,7 +149,8 @@ namespace TheWall.Controllers {
                     return RedirectToAction("Index");
                 }
             } else {
-                return RedirectToAction("Index");
+                // need to render view to support model binded errors...
+                return View("Login");
             }
         }
 

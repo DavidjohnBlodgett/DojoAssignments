@@ -4,18 +4,25 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using TheWall.Models;
-using DbConnection;
 
 namespace TheWall.Controllers
 {
     public class CommentController : Controller
     {
+
+        private readonly DbConnector _dbConnector;
+ 
+        public CommentController(DbConnector connect)
+        {
+            _dbConnector = connect;
+        }
+
         [HttpGet]
         [Route("/comments")]
         public JsonResult Comments()
         {
             // get from DB...
-            List<Dictionary<string, object>> AllComments = DbConnector.Query("SELECT * FROM comments");
+            List<Dictionary<string, object>> AllComments = _dbConnector.Query("SELECT * FROM comments");
             return Json(AllComments);
         }
 
@@ -28,7 +35,7 @@ namespace TheWall.Controllers
             if( ModelState.IsValid ) {
                 // insert to DB...
                 string queryString = "INSERT INTO comments (message_id, user_id, content, created_at, updated_at) VALUES (\"" + comment.message_id + "\",\"" + user_id + "\",\"" + comment.content + "\", NOW(), NOW())";
-                DbConnector.Query(queryString);
+                _dbConnector.Query(queryString);
 
                 return RedirectToAction("Dashboard", "Users");
             } else {

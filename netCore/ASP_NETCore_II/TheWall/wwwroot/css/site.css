@@ -2,5 +2,6 @@
 
 .top-buffer { margin-top:20px; }
 .block { display: inline-block; }
-.right { text-align: right }
-.top { vertical-align: top }
+.right { text-align: right; }
+.top { vertical-align: top; }
+.error { color: red; }
