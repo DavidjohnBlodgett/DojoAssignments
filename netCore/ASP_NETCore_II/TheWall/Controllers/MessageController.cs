@@ -4,17 +4,17 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using TheWall.Models;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace TheWall.Controllers
 {
     public class MessageController : Controller
     {
-
-        private readonly DbConnector _dbConnector;
- 
-        public MessageController(DbConnector connect)
+        private TheWallContext _context;
+        public MessageController(TheWallContext context)
         {
-            _dbConnector = connect;
+            _context = context;
         }
 
         [HttpGet]
@@ -22,7 +22,7 @@ namespace TheWall.Controllers
         public JsonResult Messages()
         {
             // get from DB...
-            List<Dictionary<string, object>> AllMessages = _dbConnector.Query("SELECT * FROM messages");
+            List<Message> AllMessages = _context.messages.ToList();
             return Json(AllMessages);
         }
 
@@ -30,18 +30,20 @@ namespace TheWall.Controllers
         [Route("/messages")]
         public IActionResult createMessage( MessageVal message )
         {
-            Console.WriteLine("I'm inside createMessage...");
             int? user_id = HttpContext.Session.GetInt32("user_id");
 
             if( ModelState.IsValid ) {
-                Console.WriteLine("Made it past validation...");
+                Message NewMessage = new Message {
+                    userid = (int)user_id,
+                    content = message.content
+                };
+
                 // insert to DB...
-                string queryString = "INSERT INTO messages (user_id, content, created_at, updated_at) VALUES (\"" + user_id + "\",\"" + message.content + "\", NOW(), NOW())";
-                _dbConnector.Query(queryString);
+                _context.messages.Add(NewMessage);
+                _context.SaveChanges();
 
                 return RedirectToAction("Dashboard", "Users");
             } else {
-                Console.WriteLine("Failed validation...");
                 return RedirectToAction("Dashboard", "Users");
             }
         }

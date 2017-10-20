@@ -4,6 +4,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Hosting;
+using TheWall.Models;
+using MySQL.Data.EntityFrameworkCore;
+using MySQL.Data.EntityFrameworkCore.Extensions;
 
 namespace TheWall
 {
@@ -26,7 +29,7 @@ namespace TheWall
         {
             // Add framework services.
             services.Configure<MySqlOptions>(Configuration.GetSection("DBInfo"));
-            services.AddScoped<DbConnector>();
+            services.AddDbContext<TheWallContext>(options => options.UseMySQL(Configuration["DBInfo:ConnectionString"]));
             services.AddMvc();
             services.AddSession();
         }

@@ -4,7 +4,7 @@ namespace TheWall.Models
 {
     public class CommentVal : BaseEntity
     {   
-        public int message_id {get; set; }
+        public int messageid {get; set; }
 
         [Required]
         [MinLength(1)]
